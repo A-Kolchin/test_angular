@@ -13,3 +13,14 @@ label{
 .alert-msg{
     margin-top:20px;
 }
+.responsive-nav{
+    background: #265a88;
+    height: 22px;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+}
+.responsive-nav a{
+    color:#fff;
+}

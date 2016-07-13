@@ -1,4 +1,5 @@
 angular.module('test').controller('eventsController', ['$scope', '$uibModal', function ($scope, $uibModal) {
+    $scope.sum = 0;
     $scope.showAlert = {};
     $scope.currentPage = 1;
     $scope.pageSize = 10;
@@ -7,6 +8,17 @@ angular.module('test').controller('eventsController', ['$scope', '$uibModal', fu
         { type: 'danger', msg: 'All events successfully removed from storage.' },
         { type: 'success', msg: 'Event added!' }
     ];
+
+    $scope.priceSum = function(_price){
+        if(_price){
+            $scope.sum += _price;
+        }
+        else{
+            angular.forEach($scope.events, function(value){
+                $scope.sum += value.price;
+            });
+        }
+    };
 
     $scope.addEvent = function(){
         var modal = $uibModal.open({
@@ -19,6 +31,7 @@ angular.module('test').controller('eventsController', ['$scope', '$uibModal', fu
         modal.result.then(function(_event){
             $scope.events.push(_event);
             window.localStorage.setItem('events', JSON.stringify($scope.events));
+            $scope.priceSum(_event.price);
             $scope.showAlert[0] = false;
             $scope.showAlert[1] = true;
         });
@@ -44,4 +57,6 @@ angular.module('test').controller('eventsController', ['$scope', '$uibModal', fu
     };
 
     $scope.events = ($scope.getEvents()) ? JSON.parse($scope.getEvents()) : [];
+
+    $scope.priceSum();
 }]);

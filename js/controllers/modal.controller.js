@@ -1,5 +1,4 @@
 angular.module('test').controller('modalController', ['$scope', '$uibModalInstance', function($scope, $uibModalInstance){
-    console.log('imnc;');
     $scope.submit = function (_name, _price) {
         $uibModalInstance.close({
             name : _name,
