@@ -1,0 +1,15 @@
+.modal-form{
+    padding: 20px;
+}
+.form-group-1{
+    padding-bottom: 20px;
+}
+label{
+    min-width:120px;
+}
+.modal-content{
+    max-width: 380px;
+}
+.alert-msg{
+    margin-top:20px;
+}

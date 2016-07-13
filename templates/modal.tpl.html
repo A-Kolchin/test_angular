@@ -1,0 +1,15 @@
+<form class="form-inline modal-form">
+    <div class="form-group-1">
+        <label for="name">Enter event name:</label>
+        <input id="name" type="text" class="form-control" placeholder="name" ng-model="eventName">
+    </div>
+    <br>
+    <div class="form-group-2">
+        <label for="price">Enter Price:</label>
+        <input id="price" type="number" class="form-control" placeholder="price" ng-model="eventPrice">
+    </div>
+</form>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="submit(eventName, eventPrice)">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
